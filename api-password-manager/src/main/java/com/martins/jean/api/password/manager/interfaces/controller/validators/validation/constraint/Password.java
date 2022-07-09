@@ -1,6 +1,7 @@
-package com.martins.jean.api.password.manager.service.validators.validation.constraint;
+package com.martins.jean.api.password.manager.interfaces.controller.validators.validation.constraint;
 
-import com.martins.jean.api.password.manager.service.validators.PasswordValidator;
+import com.martins.jean.api.password.manager.interfaces.controller.validators.PasswordValidator;
+
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -16,6 +17,7 @@ import javax.validation.Payload;
 public @interface Password {
 
     String message() default "Password is invalid";
+
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};

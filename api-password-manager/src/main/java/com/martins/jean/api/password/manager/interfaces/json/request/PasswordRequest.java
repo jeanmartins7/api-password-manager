@@ -1,11 +1,20 @@
 package com.martins.jean.api.password.manager.interfaces.json.request;
 
-import com.martins.jean.api.password.manager.service.validators.validation.constraint.Password;
+import com.martins.jean.api.password.manager.interfaces.controller.validators.validation.constraint.Password;
 import javax.validation.constraints.NotBlank;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 
 @Data
-public class PasswordRequest {
+@AllArgsConstructor
+@Builder
+@NoArgsConstructor
+public class PasswordRequest implements Serializable {
 
     @NotBlank
     @Password
