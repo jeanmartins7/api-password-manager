@@ -1,6 +1,7 @@
 ## Password Validator
 
-    This api was built to manage a passwaords  that a password is valid, in which a password is passed in the request and the password is verified through a bean custom validation.
+    This api was built to manage a passwaords  that a password is valid, in which a password is passed in the request and the password 
+    is verified through a bean custom validation.
 
 ### Project structure
 
