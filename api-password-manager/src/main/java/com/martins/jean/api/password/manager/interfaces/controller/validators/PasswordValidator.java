@@ -1,14 +1,16 @@
 package com.martins.jean.api.password.manager.interfaces.controller.validators;
 
 import com.martins.jean.api.password.manager.interfaces.controller.validators.validation.constraint.Password;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
+@Slf4j
 public class PasswordValidator implements ConstraintValidator<Password, String> {
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
-
+        log.info("Verify Password");
         String password = value == null ? "" : value;
 
         return password.length() > 8 &&
