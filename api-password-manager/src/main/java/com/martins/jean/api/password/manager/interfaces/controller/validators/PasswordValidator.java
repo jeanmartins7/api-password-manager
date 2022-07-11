@@ -1,10 +1,9 @@
 package com.martins.jean.api.password.manager.interfaces.controller.validators;
 
 import com.martins.jean.api.password.manager.interfaces.controller.validators.validation.constraint.Password;
-import lombok.extern.slf4j.Slf4j;
-
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class PasswordValidator implements ConstraintValidator<Password, String> {
@@ -35,9 +34,7 @@ public class PasswordValidator implements ConstraintValidator<Password, String> 
     }
 
     private boolean hasCharacterSpecial(String password) {
-        return password.matches(".*.[\\!\\@\\#\\$\\%\\^\\&\\*\\(\\)\\-\\+].*.");
-//        return password.matches(
-//                "(?=.*[}{,.^?~=+\\-!\\-@\\-#\\-$\\-%\\-&\\-)(\\/*\\-\\-/\\-+.\\|])(?=.*[a-zA-Z])(?=.*[0-9]).{9,}");
+        return password.matches(".*.[!@#$%^&*()\\-+].*.");
     }
 
     private boolean hasRepeatCharacter(String password) {
@@ -52,7 +49,7 @@ public class PasswordValidator implements ConstraintValidator<Password, String> 
     }
 
     private boolean hasWhiteSpace(String password) {
-        return !password.matches(".*.[\\s].*.");
+        return !password.matches(".*.\\s.*.");
     }
 
 }
