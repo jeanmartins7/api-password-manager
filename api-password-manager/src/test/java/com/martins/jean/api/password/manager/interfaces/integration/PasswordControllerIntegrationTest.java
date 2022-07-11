@@ -46,7 +46,7 @@ class PasswordControllerIntegrationTest {
 
     @Test
     @DisplayName("when post verify password and returns password is not valid because password no has  9 Characters")
-    void post_verifyPassword_ReturnsFalseBecausePasswordNotHasNineCharacter(){
+    void post_verifyPassword_ReturnsFalseBecausePasswordNotHasNineCharacter() {
         PasswordRequest passwordRequest = getRequestPasswordEmpty();
         passwordRequest.setPassword("AbTp9!fk");
 
@@ -60,7 +60,7 @@ class PasswordControllerIntegrationTest {
 
     @Test
     @DisplayName("when post verify password and returns password is not valid because password no has Upper Characters")
-    void post_verifyPassword_ReturnsFalseBecausePasswordNotHasUpperCharacter(){
+    void post_verifyPassword_ReturnsFalseBecausePasswordNotHasUpperCharacter() {
         PasswordRequest passwordRequest = getRequestPasswordEmpty();
         passwordRequest.setPassword("abtp9!fok");
 
@@ -74,7 +74,7 @@ class PasswordControllerIntegrationTest {
 
     @Test
     @DisplayName("when post verify password and returns password is not valid because password no has Low Characters")
-    void post_verifyPassword_ReturnsFalseBecausePasswordNotHasLowCharacter(){
+    void post_verifyPassword_ReturnsFalseBecausePasswordNotHasLowCharacter() {
         PasswordRequest passwordRequest = getRequestPasswordEmpty();
         passwordRequest.setPassword("ABTP9!FOK");
 
@@ -88,7 +88,7 @@ class PasswordControllerIntegrationTest {
 
     @Test
     @DisplayName("when post verify password and returns password is not valid because password no has number Characters")
-    void post_verifyPassword_ReturnsFalseBecausePasswordNotHasNumberCharacter(){
+    void post_verifyPassword_ReturnsFalseBecausePasswordNotHasNumberCharacter() {
         PasswordRequest passwordRequest = getRequestPasswordEmpty();
         passwordRequest.setPassword("AbTpm!fok");
 
@@ -102,7 +102,7 @@ class PasswordControllerIntegrationTest {
 
     @Test
     @DisplayName("when post verify password and returns password is not valid because password no has Character Special ")
-    void post_verifyPassword_ReturnsFalseBecausePasswordNotHasSpecialCharacter(){
+    void post_verifyPassword_ReturnsFalseBecausePasswordNotHasSpecialCharacter() {
         PasswordRequest passwordRequest = getRequestPasswordEmpty();
         passwordRequest.setPassword("AbTp9lfok");
 
@@ -116,7 +116,7 @@ class PasswordControllerIntegrationTest {
 
     @Test
     @DisplayName("when post verify password and returns password is not valid because password has same Characters")
-    void post_verifyPassword_ReturnsFalseBecausePasswordHasSameCharacter(){
+    void post_verifyPassword_ReturnsFalseBecausePasswordHasSameCharacter() {
         PasswordRequest passwordRequest = getRequestPasswordEmpty();
         passwordRequest.setPassword("AbTp9!fokA");
 
@@ -130,7 +130,7 @@ class PasswordControllerIntegrationTest {
 
     @Test
     @DisplayName("when post verify password and returns password is not valid because password has White Space")
-    void post_verifyPassword_ReturnsFalseBecausePasswordHasWhiteSpace(){
+    void post_verifyPassword_ReturnsFalseBecausePasswordHasWhiteSpace() {
         PasswordRequest passwordRequest = getRequestPasswordEmpty();
         passwordRequest.setPassword("Ab9! fok");
 
