@@ -20,7 +20,7 @@
 
 **Execute the app using InteliJ or another smart IDE for java** </br>
 
-- **When the app is running, run a POST method on Insomnia or Postman for the url: **http://localhost:8090/api/v1/password-manager/verify** using the following data:**
+- **When the app is running, run a POST method on Insomnia or Postman for the url: **http://localhost:8090/api/password-manager/v1/verify** using the following data:**
 
 ```json
 {
@@ -31,7 +31,7 @@
 - **or you can import a curl**
 
 ```zsh
-curl --location --request POST 'localhost:8090/api/v1/password-manager/verify' \
+curl --location --request POST 'localhost:8090/api/password-manager/v1/verify' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "password":"AbTp9!fok"
