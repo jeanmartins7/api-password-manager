@@ -24,7 +24,7 @@ public class PasswordControllerIntegration {
 
     @BeforeEach
     void setUp() throws URISyntaxException {
-        baseUrl = "http://localhost:" + port + "/api/v1/password-manager/verify";
+        baseUrl = "http://localhost:" + port + "/api/password-manager/v1/verify";
         uri = new URI(baseUrl);
     }
 
