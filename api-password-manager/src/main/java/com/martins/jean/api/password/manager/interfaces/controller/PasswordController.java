@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/password")
+@RequestMapping("/password-manager")
 public class PasswordController {
 
-    @PostMapping
-    public ResponseEntity<Boolean> postCreatePassword(@RequestBody @Valid PasswordRequest request) {
+    @PostMapping("/verify")
+    public ResponseEntity<Boolean> postVerifyPassword(@RequestBody @Valid PasswordRequest request) {
 
         return ResponseEntity.ok(true);
     }

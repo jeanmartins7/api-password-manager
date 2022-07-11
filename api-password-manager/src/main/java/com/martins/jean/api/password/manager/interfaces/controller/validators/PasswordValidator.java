@@ -11,13 +11,13 @@ public class PasswordValidator implements ConstraintValidator<Password, String> 
 
         String password = value == null ? "" : value;
 
-        return password.length() > 3 &&
+        return password.length() > 8 &&
                 containsNumbers(password) &&
                 containsUppercase(password) &&
                 containsLowercase(password) &&
                 hasWhiteSpace(password) &&
                 hasRepeatCharacter(password) &&
-                hasUnderscoreCharacter(password);
+                hasCharacterSpecial(password);
     }
 
     private boolean containsNumbers(String password) {
@@ -32,10 +32,10 @@ public class PasswordValidator implements ConstraintValidator<Password, String> 
         return password.matches(".*.[A-Z].*.");
     }
 
-    private boolean hasUnderscoreCharacter(String password) {
-        //return password.matches(".*.[\\!\\@\\#\\$\\%\\^\\&\\*\\(\\)\\-\\+].*.");
-        return password.matches(
-                "(?=.*[}{,.^?~=+\\-!\\-@\\-#\\-$\\-%\\-&\\-)(\\/*\\-\\-/\\-+.\\|])(?=.*[a-zA-Z])(?=.*[0-9]).{9,}");
+    private boolean hasCharacterSpecial(String password) {
+        return password.matches(".*.[\\!\\@\\#\\$\\%\\^\\&\\*\\(\\)\\-\\+].*.");
+//        return password.matches(
+//                "(?=.*[}{,.^?~=+\\-!\\-@\\-#\\-$\\-%\\-&\\-)(\\/*\\-\\-/\\-+.\\|])(?=.*[a-zA-Z])(?=.*[0-9]).{9,}");
     }
 
     private boolean hasRepeatCharacter(String password) {
