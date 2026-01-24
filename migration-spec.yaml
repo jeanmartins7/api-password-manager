@@ -1,0 +1,34 @@
+version: "1.0"
+project: "api-password-manager"
+objective: "Upgrade to Java 25 and GraalVM Native Image support"
+
+spec_rules:
+  - id: "J25_UPGRADE"
+    description: "Upgrade the project to Java 25 (LTS)"
+    actions:
+      - update_property: "java.version"
+        value: "25"
+      - update_parent: "org.springframework.boot:spring-boot-starter-parent"
+        version: "3.4.1" # Versão mínima estável para suporte pleno ao J25
+      - enable_feature: "Virtual Threads"
+        config_path: "src/main/resources/application.properties"
+        key: "spring.threads.virtual.enabled"
+        value: "true"
+
+  - id: "GRAALVM_OPTIMIZATION"
+    description: "Configure Maven for GraalVM Native Image generation"
+    actions:
+      - add_plugin: "org.graalvm.buildtools:native-maven-plugin"
+      - add_dependency: "org.springframework.boot:spring-boot-starter-actuator" # Necessário para health checks nativos
+      - enforce_aot: "Ensure no dynamic reflection is used without configuration"
+
+  - id: "CLEAN_ARCHITECTURE_COMPLIANCE"
+    description: "Ensure Java 25 features are used correctly in Domain layer"
+    actions:
+      - refactor: "Replace Boilerplate DTOs with Java Records"
+      - use_api: "Use Structured Concurrency where applicable (preview)"
+
+constraints:
+  - "Do not use non-LTS dependencies."
+  - "Maintain full compatibility with PostgreSQL 16+."
+  - "All generated code must be compatible with GraalVM AOT (Ahead-of-Time) compilation."
