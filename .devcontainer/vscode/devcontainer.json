@@ -1,0 +1,18 @@
+{
+    "name": "Java Password Manager Dev",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-pack", 
+                "vscjava.vscode-spring-boot-dashboard",
+                "vmware.vscode-spring-boot"
+            ]
+        }
+    },
+
+    "remoteUser": "vscode"
+}
