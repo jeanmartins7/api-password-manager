@@ -1,0 +1,13 @@
+{
+    "name": "Java Password Manager",
+    "build": { "dockerfile": "Dockerfile" },
+    "customizations": {
+        "jetbrains": {
+            "backend": "IU",
+            "plugins": [
+                "Lombok",
+                "CheckStyle-IDEA"
+            ]
+        }
+    }
+}
