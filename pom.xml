@@ -14,7 +14,7 @@
     <name>api-password-manager</name>
     <description>api-password-manager</description>
     <properties>
-        <java.version>11</java.version>
+        <java.version>21</java.version>
     </properties>
     <dependencies>
         <dependency>

@@ -1,0 +1,19 @@
+{
+    "name": "Java Multi-IDE Project",
+    "build": { "dockerfile": "Dockerfile" },
+    
+    "customizations": {
+
+        "vscode": {
+            "extensions": ["vscjava.vscode-java-pack",
+        "vscjava.vscode-spring-boot-dashboard",
+        "vmware.vscode-spring-boot"]
+        },
+
+        "jetbrains": {
+            "backend": "IU",
+            "plugins": ["Lombok", "GitToolBox", "CheckStyle-IDEA"]
+        }
+    },
+    "remoteUser": "vscode"
+}
